@@ -1,0 +1,6 @@
+public class ArithmeticDemo{
+	public static void main(String[]args) {
+		int reamainer = 25%2;
+		System.out.println("25/2의 나머지는"+remainer+"입니다");
+	}
+}
