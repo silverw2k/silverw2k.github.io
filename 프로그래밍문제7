@@ -1,0 +1,21 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    // 정수 입력 받기
+    println("정수를 입력하세요:")
+    val number = scanner.nextInt()
+
+    // 4와 5로 나누어지는지 확인
+    val isDivisibleBy4And5 = number % 4 == 0 && number % 5 == 0
+    println("4와 5로 모두 나누어지는지: $isDivisibleBy4And5")
+
+    // 4 또는 5로 나누어지는지 확인
+    val isDivisibleBy4Or5 = number % 4 == 0 || number % 5 == 0
+    println("4 또는 5로 하나 이상 나누어지는지: $isDivisibleBy4Or5")
+
+    // 4나 5 중 하나로는 나누어지지만 두 수 모두로는 나누어지지 않는지 확인
+    val isDivisibleBy4Or5ButNotBoth = (number % 4 == 0 || number % 5 == 0) && !(number % 4 == 0 && number % 5 == 0)
+    println("4나 5 중 하나로는 나누어지지만 두 수 모두로는 나누어지지 않는지: $isDivisibleBy4Or5ButNotBoth")
+}
