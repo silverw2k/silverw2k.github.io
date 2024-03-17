@@ -1,0 +1,29 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    // 학점 입력 받기
+    println("전공 학점을 입력하세요:")
+    val majorCredits = scanner.nextInt()
+
+    println("교양 학점을 입력하세요:")
+    val liberalArtsCredits = scanner.nextInt()
+
+    println("일반 학점을 입력하세요:")
+    val generalCredits = scanner.nextInt()
+
+    // 졸업 여부 판단
+    val isGraduated = if (majorCredits >= 70 && (liberalArtsCredits >= 30 || generalCredits >= 30 || (liberalArtsCredits + generalCredits >= 80))) {
+        true
+    } else {
+        false
+    }
+
+    // 결과 출력
+    if (isGraduated) {
+        println("졸업 가능합니다.")
+    } else {
+        println("졸업 불가능합니다.")
+    }
+}
