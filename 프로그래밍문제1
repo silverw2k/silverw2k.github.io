@@ -1,0 +1,23 @@
+fun main() {
+    val rows = 6 // 피라미드의 높이를 결정하는 행 수
+
+    for (i in 1..rows) {
+        // 왼쪽의 공백 출력
+        for (j in 1..rows - i) {
+            print(" ")
+        }
+
+        // 왼쪽 삼각형 출력
+        for (j in 1..i) {
+            print("* ")
+        }
+
+        // 오른쪽 삼각형 출력
+        for (j in 2 until i + 1) {
+            print("* ")
+        }
+
+        // 다음 줄로 넘어감
+        println()
+    }
+}
