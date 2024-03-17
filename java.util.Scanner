@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class ScannerDemo{
+	public static void main(String[]args) {
+		Scanner in = new Scanner(system.in);
+		int x = in.nextint();
+		int y = in.nextint();
+		System.out.printf("%d * %d은 %d입니다 \n",x,y,x*y);
+	}
+}
