@@ -1,0 +1,21 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    // 정수 입력 받기
+    println("0부터 999 사이의 정수를 입력하세요:")
+    var number = scanner.nextInt()
+
+    // 각 자릿수를 더한 결과를 저장할 변수 초기화
+    var sum = 0
+
+    // 각 자릿수를 더하기
+    while (number != 0) {
+        sum += number % 10 // 일의 자릿수를 더함
+        number /= 10 // 다음 자릿수로 이동
+    }
+
+    // 결과 출력
+    println("각 자릿수를 더한 결과는 $sum 입니다.")
+}
