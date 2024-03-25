@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        int maxLimit = 20;
+
+        System.out.println("변의 길이가 정수인 직각 삼각형의 변:");
+
+        // a와 b는 1부터 maxLimit까지의 정수로 설정
+        for (int a = 1; a <= maxLimit; a++) {
+            for (int b = a; b <= maxLimit; b++) {
+                double c = Math.sqrt(a * a + b * b); // 피타고라스의 정리를 이용하여 c 계산
+                if (c <= maxLimit && c == (int) c) { // c가 정수이고 20 이하인지 확인
+                    System.out.printf("(%d, %d, %.0f)\n", a, b, c);
+                }
+            }
+        }
+    }
+}
