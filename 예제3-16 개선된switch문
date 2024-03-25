@@ -1,0 +1,19 @@
+public class switch3Demo {
+	public static void main(string[]args) {
+		wholist("호랑이");
+		wholist("참새");
+		wholist("고등어");
+		wholist("곰팡이");
+	}
+	
+	static void wholist(string bio) {
+		string kind ="...";
+		switch (bio) {
+		case "호랑이","사자"->kind="표유류";
+		case "독수리","참새"->kind="조류";
+		case "고등어","연어"->kind="어류";
+		default->system.out.print("어이쿠!");
+		}
+		system.out.printf("%s는 %s이다.\n",bio,kind);
+	}
+}
