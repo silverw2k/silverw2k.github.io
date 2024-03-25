@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(factorial(5));      // 5! = 120
+        System.out.println(factorial(1, 5));   // 1 * 2 * 3 * 4 * 5 = 120
+        System.out.println(factorial(3, 5));   // 3 * 4 * 5 = 60
+        System.out.println(factorial(10, 5));  // 구간이 잘못되었으므로 0 반환
+    }
+
+    static int factorial(int x, int y) {
+        // 시작점과 끝점이 올바른지 확인
+        if (x <= 0 || y < x) {
+            return 0;
+        }
+
+        int r = 1;
+        for (int i = x; i <= y; i++) {
+            r *= i;
+        }
+        return r;
+    }
+
+    // x만을 인자로 받아 전체 팩토리얼을 계산하는 오버로딩된 factorial 메서드
+    static int factorial(int x) {
+        return factorial(1, x);
+    }
+}
