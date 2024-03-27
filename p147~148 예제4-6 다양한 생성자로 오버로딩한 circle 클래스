@@ -1,0 +1,36 @@
+class circle {
+	double radius;
+	string color;
+	
+	public circle(double r, string c) {
+		radius = r;
+		color = c;
+	}
+	
+	public circle(double r) {
+		radius = r;
+		color = "파랑";
+	}
+	
+	public circle(string c) {
+		radius = 10.0;
+		color = c;
+	}
+	
+	public circle() {
+		radius = 10.0;
+		color = "빨강";
+	}
+}
+
+public class circledemo {
+	public static void main(string[]args) {
+		circle c1 = new circle(10.0,"빨강");
+		
+		circle c2 = new circle(5.0);
+		
+		circle c3 = new circle("노랑");
+		
+		circle c4 = new circle();
+	}
+}
