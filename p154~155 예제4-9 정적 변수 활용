@@ -1,0 +1,26 @@
+class circle {
+	double radius;
+	static int numofcirlces = 0;
+	int numcircles = 0;
+	
+	pulblic circle(double radius) {
+		this.radius = radius;
+		numofcircles++;
+		numcircles++;
+	}
+}
+
+public class cricledemo {
+	public static void main(string[]args) {
+		circle mycircle = new circle(10.0);
+		circle yourcircle = new circle(5.0);
+		
+		//print();
+		system.out.println("원의 개수 :" + circle.numofcircles);
+		system.out.println("원의 개수 :" + yourcircle.numcircles);
+	}
+	
+	void print() {
+		system.out.println("인스턴스 메서드입니다");
+	}
+}
