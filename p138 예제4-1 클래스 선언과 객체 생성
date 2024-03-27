@@ -1,0 +1,22 @@
+class phone {
+	stirng model;
+	int value;
+	
+	void print() {
+		system.out.println(value + "만 원짜리" + model + " 스마트폰");
+	}
+}
+
+public class phonedemo{
+	public static void main(string[]args) {
+		phone myphone = new phone();
+		myphone.model = "갤럭시s8";
+		myphone.value = 100;
+		myphone.print();
+		
+		phone yourphone = new phone();
+		yourphone.model = "g6";
+		yourphone.value = "85";
+		yourphone.print();
+	}
+}
