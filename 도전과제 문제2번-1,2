@@ -1,0 +1,21 @@
+class Printer {
+    private int numOfPapers;
+
+    // Constructor to initialize numOfPapers
+    public Printer(int initialNumOfPapers) {
+        this.numOfPapers = initialNumOfPapers;
+    }
+
+    public void print(int amount) {
+        if (numOfPapers == 0) {
+            System.out.println("No papers available.");
+        } else if (amount > numOfPapers) {
+            System.out.println("Printing " + numOfPapers + " pages. Not enough papers for requested amount.");
+            numOfPapers = 0;
+        } else {
+            System.out.println("Printing " + amount + " pages.");
+            numOfPapers -= amount;
+        }
+        System.out.println("Remaining number of papers: " + numOfPapers);
+    }
+}
