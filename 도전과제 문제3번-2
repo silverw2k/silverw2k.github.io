@@ -1,0 +1,34 @@
+class Printer {
+    private int numOfPapers;
+    private boolean duplex;
+
+    public Printer(int numOfPapers, boolean duplex) {
+        this.numOfPapers = numOfPapers;
+        this.duplex = duplex;
+    }
+
+    public void print(int amount) {
+        if (numOfPapers == 0) {
+            System.out.println("No papers available.");
+            return;
+        }
+
+        int pagesToPrint = duplex ? amount / 2 + amount % 2 : amount;
+        if (numOfPapers < pagesToPrint) {
+            System.out.println("Not enough papers to print.");
+            return;
+        }
+
+        numOfPapers -= pagesToPrint;
+        System.out.println("Printing " + pagesToPrint + " pages.");
+        System.out.println("Remaining number of papers: " + numOfPapers);
+    }
+
+    public boolean isDuplex() {
+        return duplex;
+    }
+
+    public void setDuplex(boolean duplex) {
+        this.duplex = duplex;
+    }
+}
