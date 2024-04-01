@@ -1,0 +1,27 @@
+class Printer {
+    int numOfPapers = 0;
+
+    public void print(int amount) {
+        if (numOfPapers >= amount) {
+            System.out.println("Printing " + amount + " pages.");
+            numOfPapers -= amount;
+        } else {
+            System.out.println("Not enough papers to print.");
+        }
+    }
+}
+
+public class PrinterTest {
+    public static void main(String[] args) {
+        Printer printer = new Printer();
+        printer.numOfPapers = 100; // Set initial number of papers
+
+        System.out.println("Initial number of papers: " + printer.numOfPapers);
+
+        printer.print(70); // Print 70 pages
+        System.out.println("Remaining number of papers: " + printer.numOfPapers);
+
+        // Test case: Check remaining number of papers
+        System.out.println("Remaining number of papers: " + printer.numOfPapers); // Should output 30
+    }
+}
