@@ -1,0 +1,21 @@
+class Printer {
+    private int numOfPapers;
+    private boolean duplex;
+
+    public Printer(int numOfPapers, boolean duplex) {
+        this.numOfPapers = numOfPapers;
+        this.duplex = duplex;
+    }
+
+    public void print(int amount) {
+        // Implementation of print method goes here
+    }
+
+    public boolean isDuplex() {
+        return duplex;
+    }
+
+    public void setDuplex(boolean duplex) {
+        this.duplex = duplex;
+    }
+}
