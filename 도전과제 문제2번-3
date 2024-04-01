@@ -1,0 +1,12 @@
+public class PrinterTest {
+    public static void main(String[] args) {
+        
+        Printer printer = new Printer(100);
+
+        printer.print(70);
+
+        printer.print(50);
+
+        printer.print(10);
+    }
+}
