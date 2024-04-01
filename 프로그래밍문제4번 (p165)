@@ -1,0 +1,23 @@
+public class Car {
+    private String color;
+    private static int numOfRedCar = 0;
+    private static int numOfCar = 0;
+
+    public Car(String color) {
+        this.color = color;
+        numOfCar++;
+        if (color.equalsIgnoreCase("red")) {
+            numOfRedCar++;
+        }
+    }
+
+    // Getter for numOfRedCar
+    public static int getNumOfRedCar() {
+        return numOfRedCar;
+    }
+
+    // Getter for numOfCar
+    public static int getNumOfCar() {
+        return numOfCar;
+    }
+}
