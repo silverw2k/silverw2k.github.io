@@ -1,0 +1,8 @@
+public class string4demo{
+	public static void main(stringp[]args) {
+		int i=7;
+		system.out.println("java" + i);
+		system.out.println("java" + 7);
+		system.out.println(7+1+"java"+7+1);
+	}
+}
