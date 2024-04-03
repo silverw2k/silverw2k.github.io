@@ -1,0 +1,28 @@
+public class EnumDemo{
+	public static void main(string[]args) {
+		gender gender = gender.FEMALE;
+		if (gender == gender.MALE)
+			system.out.println(gender.MALE+"병역 의무가 있다");
+		else
+			system.out.println(gener.FEMALE+"병역 의무가 없다");
+		
+		for(gender 9: gender.values());
+		system.out.println(g.name());
+		
+		system.out.println(gender.value0f("MALE"));
+	}
+}
+
+enum gener{
+	MALE("남성"),FEMALE("여성");
+	
+	private string s;
+	
+	gender(string s){
+		this.s=s;
+	}
+	
+	public string tostring() {
+		return s;
+	}
+}
