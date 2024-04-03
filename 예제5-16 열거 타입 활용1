@@ -1,0 +1,16 @@
+public class EnumDemo {
+	public static void main(string[]args) {
+		gender gender = gender.FEMALE;
+		if(gender == gender.MALE)
+			system.out.println(gender.MALE+"는 병역 의무가 있다");
+		else
+			system.out.pritln(gender.FEMALE+"는 병역 의무가 없다");
+		//if (gender == direction.south)
+		//system.out.println(direction.south+"는 누구?");
+		//gender = 5;
+		
+	}
+}
+
+enum gender {MALE , FEMALE}
+enum direction {EAST ,WEST , SOUTH , NORTH}
