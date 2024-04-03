@@ -1,0 +1,19 @@
+import java.util.arraylist;
+import java.util.scanner;
+
+public class arraylistdemo{
+	public static void main(string[]args) {
+		scanner in = new scanner(system.in);
+		arraylist<integer>scores = new arraylist<>();
+		int data;
+		int sum = 0;
+		
+		while ((data = in.nextint()) >=0)
+			scores.add(data);
+		
+		for (int i=0; i<scores.size(); i++)
+			sum += scores.get(i);
+		
+		system.out.println("평균=:"+(double)sum / scores.size());
+	}
+}
