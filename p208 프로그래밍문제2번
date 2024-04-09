@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(sumexceptfirst(1, 2, 3, 4));
+        int arr[] = {2, 3};
+        System.out.println(sumexceptfirst(1, arr));
+        System.out.println(sumexceptfirst(1, 2, 3, 4, 5));
+    }
+
+    public static int sumexceptfirst(int first, int... nums) {
+        int sum = 0;
+        for (int i = 1; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        return sum;
+    }
+}
