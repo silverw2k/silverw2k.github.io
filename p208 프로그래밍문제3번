@@ -1,0 +1,10 @@
+public class Main {
+    enum direction {
+        동, 서, 남, 북
+    }
+
+    public static void main(String[] args) {
+        for (direction d : direction.values())
+            System.out.print(d + "");
+    }
+}
