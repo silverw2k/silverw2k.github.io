@@ -1,0 +1,98 @@
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        // 명령행 인수로부터 m, n, p를 받아옴
+        if (args.length != 3) {
+            System.out.println("사용법: java Main m n p");
+            return;
+        }
+
+        int m = Integer.parseInt(args[0]); // 행 수
+        int n = Integer.parseInt(args[1]); // 열 수
+        double p = Double.parseDouble(args[2]); // 지뢰 확률
+
+        // 지뢰 숨김 여부를 나타내는 배열 생성
+        boolean[][] mines = generateMines(m, n, p);
+
+        // 지뢰 숨김 여부를 출력
+        printMines(mines);
+
+        // 이웃한 지뢰 개수로 채운 배열 생성 및 출력
+        char[][] neighborCounts = calculateNeighborCounts(mines);
+        System.out.println("이웃한 지뢰 개수:");
+        printCharArray(neighborCounts);
+    }
+
+    // 지뢰 숨김 여부를 나타내는 배열 생성
+    public static boolean[][] generateMines(int m, int n, double p) {
+        Random random = new Random();
+        boolean[][] mines = new boolean[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                mines[i][j] = random.nextDouble() < p;
+            }
+        }
+
+        return mines;
+    }
+
+    // 지뢰 숨김 여부를 출력
+    public static void printMines(boolean[][] mines) {
+        System.out.println("지뢰 숨김 여부:");
+        for (boolean[] row : mines) {
+            for (boolean mine : row) {
+                System.out.print(mine ? "* " : "- ");
+            }
+            System.out.println();
+        }
+    }
+
+    // 이웃한 지뢰 개수로 채운 배열 생성
+    public static char[][] calculateNeighborCounts(boolean[][] mines) {
+        int m = mines.length;
+        int n = mines[0].length;
+        char[][] neighborCounts = new char[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (!mines[i][j]) {
+                    neighborCounts[i][j] = countNeighbors(mines, i, j);
+                } else {
+                    neighborCounts[i][j] = '*';
+                }
+            }
+        }
+
+        return neighborCounts;
+    }
+
+    // 지뢰가 아닌 이웃한 지뢰 개수를 반환
+    public static char countNeighbors(boolean[][] mines, int row, int col) {
+        int count = 0;
+        int m = mines.length;
+        int n = mines[0].length;
+
+        // 상하좌우 및 대각선을 확인하면서 이웃한 지뢰 개수 세기
+        for (int i = row - 1; i <= row + 1; i++) {
+            for (int j = col - 1; j <= col + 1; j++) {
+                if (i >= 0 && i < m && j >= 0 && j < n && mines[i][j]) {
+                    count++;
+                }
+            }
+        }
+
+        return (char) (count + '0');
+    }
+
+    // 문자 배열 출력
+    public static void printCharArray(char[][] array) {
+        for (char[] row : array) {
+            for (char ch : row) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+}
