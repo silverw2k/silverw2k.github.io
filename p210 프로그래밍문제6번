@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+        int[] reversedArray = reverse(originalArray);
+        
+        // 역순으로 변환된 배열 출력
+        for (int num : reversedArray) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static int[] reverse(int[] org) {
+        int[] reversedArray = new int[org.length];
+        for (int i = 0; i < org.length; i++) {
+            reversedArray[i] = org[org.length - 1 - i];
+        }
+        return reversedArray;
+    }
+}
