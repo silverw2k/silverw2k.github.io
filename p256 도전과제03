@@ -1,0 +1,41 @@
+class Girl {
+    protected String name;
+
+    public Girl(String name) {
+        this.name = name;
+    }
+
+    void show() {
+        System.out.println(name + " 자바 초보자이다");
+    }
+}
+
+class GoodGirl extends Girl {
+    public GoodGirl(String name) {
+        super(name);
+        System.out.println(name + " is a good girl");
+    }
+
+    @Override
+    void show() {
+        System.out.println(name + " 자바를 안다");
+    }
+}
+
+class BestGirl extends GoodGirl {
+    public BestGirl(String name) {
+        super(name);
+        System.out.println(name + " is the best girl");
+    }
+
+    @Override
+    void show() {
+        System.out.println(name + " 자바를 무지하게 잘 안다");
+    }
+}
+public class GirlTest {
+    public static void main(String[] args) {
+        Girl girl = new BestGirl("Anna");
+        girl.show();
+    }
+}
