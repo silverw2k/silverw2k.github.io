@@ -1,0 +1,34 @@
+class Circle {
+    protected double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    void show() {
+        System.out.println("반지름이 " + radius + "인 원");
+    }
+}
+
+class ColoredCircle extends Circle {
+    private String color;
+
+    public ColoredCircle(double radius, String color) {
+        super(radius);
+        this.color = color;
+    }
+
+    @Override
+    void show() {
+        System.out.println("반지름이 " + radius + "인 " + color + " 원");
+    }
+}
+public class CircleTest {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5);
+        circle.show(); // 출력: 반지름이 5인 원
+
+        ColoredCircle coloredCircle = new ColoredCircle(10, "빨간색");
+        coloredCircle.show(); // 출력: 반지름이 10인 빨간색 원
+    }
+}
