@@ -1,0 +1,30 @@
+class Transport {
+    protected String type;
+    protected int capacity;
+
+    public Transport(String type, int capacity) {
+        this.type = type;
+        this.capacity = capacity;
+    }
+
+    void show() {
+        System.out.println("Transport Type: " + type + ", Capacity: " + capacity);
+    }
+}
+
+class Car extends Transport {
+    private String model;
+    private String manufacturer;
+
+    public Car(String type, int capacity, String model, String manufacturer) {
+        super(type, capacity);
+        this.model = model;
+        this.manufacturer = manufacturer;
+    }
+
+    @Override
+    void show() {
+        super.show();
+        System.out.println("Model: " + model + ", Manufacturer: " + manufacturer);
+    }
+}
