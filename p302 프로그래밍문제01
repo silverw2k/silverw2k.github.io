@@ -1,0 +1,29 @@
+abstract class AbstractClass {
+    int i;
+    int j;
+
+    // 추상 메서드
+    abstract void show();
+}
+
+// 구현 클래스
+class concrete extends AbstractClass {
+    // 생성자
+    concrete(int i, int j) {
+        this.i = i;
+        this.j = j;
+    }
+
+    // 추상 메서드 구현
+    void show() {
+        System.out.println("i=" + i + " , j=" + j);
+    }
+}
+
+// 실행 클래스
+public class AbstractTest {
+    public static void main(String[] args) {
+        concrete c = new concrete(100, 50);
+        c.show();
+    }
+}
