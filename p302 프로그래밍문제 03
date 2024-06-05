@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+class Book {
+    int price;
+
+    // 생성자
+    public Book(int price) {
+        this.price = price;
+    }
+
+    // getter 메서드
+    public int getPrice() {
+        return price;
+    }
+
+    // 출력 메서드
+    public void display() {
+        System.out.println("Price: " + price);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        // Book 객체 배열 생성
+        Book[] books = new Book[3];
+        books[0] = new Book(30);
+        books[1] = new Book(20);
+        books[2] = new Book(50);
+
+        // 가격에 따라 정렬
+        Arrays.sort(books, Comparator.comparingInt(Book::getPrice));
+
+        // 정렬된 책 가격 출력
+        for (Book book : books) {
+            book.display();
+        }
+    }
+}
