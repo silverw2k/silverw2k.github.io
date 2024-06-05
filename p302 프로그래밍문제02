@@ -1,0 +1,3 @@
+interface Delicious extends Edible, Sweetable {
+    // Delicious 인터페이스는 Edible과 Sweetable의 메서드를 모두 포함합니다.
+}
