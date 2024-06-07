@@ -1,0 +1,82 @@
+public class Controller {
+    private boolean power;
+
+    public Controller() {
+        this.power = false;
+    }
+
+    public void powerOn() {
+        this.power = true;
+        System.out.println("Power is ON.");
+    }
+
+    public void powerOff() {
+        this.power = false;
+        System.out.println("Power is OFF.");
+    }
+
+    public boolean isPowerOn() {
+        return power;
+    }
+}
+public class TV extends Controller {
+    private int channel;
+
+    public TV() {
+        super();
+        this.channel = 1; // default channel
+    }
+
+    public void setChannel(int channel) {
+        if (isPowerOn()) {
+            this.channel = channel;
+            System.out.println("TV channel set to " + channel);
+        } else {
+            System.out.println("Please turn on the TV first.");
+        }
+    }
+
+    public int getChannel() {
+        return channel;
+    }
+}
+public class Radio extends Controller {
+    private double frequency;
+
+    public Radio() {
+        super();
+        this.frequency = 98.0; // default frequency
+    }
+
+    public void setFrequency(double frequency) {
+        if (isPowerOn()) {
+            this.frequency = frequency;
+            System.out.println("Radio frequency set to " + frequency + " MHz");
+        } else {
+            System.out.println("Please turn on the Radio first.");
+        }
+    }
+
+    public double getFrequency() {
+        return frequency;
+    }
+}
+public class ControllerTest {
+    public static void main(String[] args) {
+        // Create TV and Radio instances
+        TV tv = new TV();
+        Radio radio = new Radio();
+
+        // Test TV
+        tv.powerOn();
+        tv.setChannel(5);
+        System.out.println("Current TV channel: " + tv.getChannel());
+        tv.powerOff();
+
+        // Test Radio
+        radio.powerOn();
+        radio.setFrequency(102.5);
+        System.out.println("Current Radio frequency: " + radio.getFrequency());
+        radio.powerOff();
+    }
+}
