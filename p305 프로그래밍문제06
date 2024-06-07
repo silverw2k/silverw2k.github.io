@@ -1,0 +1,43 @@
+public interface Human {
+    void print();
+    static void echo() {
+        System.out.println("Echo from Human interface");
+    }
+}
+public class Student implements Human {
+    @Override
+    public void print() {
+        System.out.println("Student print method");
+    }
+
+    public static void echo() {
+        System.out.println("Echo from Student class");
+    }
+}
+public class Worker {
+    public void print() {
+        System.out.println("Worker print method");
+    }
+
+    public static void echo() {
+        System.out.println("Echo from Worker class");
+    }
+}
+public class HumanTest {
+    public static void main(String[] args) {
+        // Create instances of Worker and Student
+        Worker worker = new Worker();
+        Student student = new Student();
+
+        // Call print method on each instance
+        worker.print();
+        student.print();
+
+        // Call echo method on each class
+        Worker.echo();
+        Student.echo();
+
+        // Call echo method from Human interface
+        Human.echo();
+    }
+}
