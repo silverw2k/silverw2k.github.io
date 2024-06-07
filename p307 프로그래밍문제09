@@ -1,0 +1,48 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Hotel {
+    private Map<Integer, String> rooms;
+
+    public Hotel() {
+        rooms = new HashMap<>();
+        // Initialize the rooms with null indicating no reservation
+        for (int i = 1; i <= 10; i++) {
+            rooms.put(i, null);
+        }
+    }
+
+    // Method to add a reservation
+    public void add(int roomNumber, String guestName) {
+        if (roomNumber < 1 || roomNumber > 10) {
+            System.out.println("Invalid room number. Please choose a room number between 1 and 10.");
+            return;
+        }
+        if (rooms.get(roomNumber) != null) {
+            System.out.println("Room " + roomNumber + " is already reserved.");
+        } else {
+            rooms.put(roomNumber, guestName);
+            System.out.println("Room " + roomNumber + " has been reserved for " + guestName + ".");
+        }
+    }
+
+    // Method to show current reservations
+    public void show() {
+        System.out.println("Current reservations:");
+        for (Map.Entry<Integer, String> entry : rooms.entrySet()) {
+            if (entry.getValue() != null) {
+                System.out.println("Room " + entry.getKey() + ": " + entry.getValue());
+            } else {
+                System.out.println("Room " + entry.getKey() + ": Available");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Hotel hotel = new Hotel();
+        hotel.add(1, "John Doe");
+        hotel.add(5, "Jane Smith");
+        hotel.add(10, "Alice Johnson");
+        hotel.show();
+    }
+}
