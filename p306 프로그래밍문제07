@@ -1,0 +1,29 @@
+public interface Flyable {
+    void fly();
+}
+public class FlyableTest {
+    public static void main(String[] args) {
+        // 지역 클래스를 이용하여 Flyable 인터페이스를 구현합니다.
+        class Bird implements Flyable {
+            @Override
+            public void fly() {
+                System.out.println("Bird is flying");
+            }
+        }
+
+        class Airplane implements Flyable {
+            @Override
+            public void fly() {
+                System.out.println("Airplane is flying");
+            }
+        }
+
+        // Flyable 인터페이스를 구현한 객체를 생성합니다.
+        Flyable bird = new Bird();
+        Flyable airplane = new Airplane();
+
+        // fly 메서드를 호출하여 테스트합니다.
+        bird.fly();       // 예상 출력: "Bird is flying"
+        airplane.fly();   // 예상 출력: "Airplane is flying"
+    }
+}
