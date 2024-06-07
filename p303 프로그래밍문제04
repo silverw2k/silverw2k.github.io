@@ -1,0 +1,26 @@
+public interface Talkable {
+    void talk();
+}
+public class Korean implements Talkable {
+    @Override
+    public void talk() {
+        System.out.println("안녕하세요!");
+    }
+}
+public class American implements Talkable {
+    @Override
+    public void talk() {
+        System.out.println("Hello!");
+    }
+}
+public class TalkTest {
+    public static void main(String[] args) {
+        // Create instances of Korean and American
+        Talkable korean = new Korean();
+        Talkable american = new American();
+
+        // Call the talk method on each instance
+        korean.talk();    // Expected output: "안녕하세요!"
+        american.talk();  // Expected output: "Hello!"
+    }
+}
