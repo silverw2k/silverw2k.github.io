@@ -1,0 +1,43 @@
+public class Book implements Comparable<Book> {
+    private int price;
+
+    // Constructor
+    public Book(int price) {
+        this.price = price;
+    }
+
+    // Getter for price
+    public int getPrice() {
+        return price;
+    }
+
+    // Override compareTo method for sorting
+    @Override
+    public int compareTo(Book other) {
+        return Integer.compare(this.price, other.price);
+    }
+
+    // Override toString method for printing
+    @Override
+    public String toString() {
+        return "Book{price=" + price + "}";
+    }
+}
+public class BookTest {
+    public static void main(String[] args) {
+        // Create an array of Book objects
+        Book[] books = {
+            new Book(150),
+            new Book(200),
+            new Book(100)
+        };
+
+        // Sort the books array by price
+        Arrays.sort(books);
+
+        // Print the sorted array
+        for (Book book : books) {
+            System.out.println(book);
+        }
+    }
+}
