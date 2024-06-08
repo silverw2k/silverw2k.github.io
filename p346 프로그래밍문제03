@@ -1,0 +1,30 @@
+import calendar
+
+def print_calendar_info(year, month, day):
+    # 연도와 월의 달력 출력
+    print(f"Calendar for {year}-{month}:\n")
+    print(calendar.month(year, month))
+    
+    # 특정 날짜의 요일 확인
+    day_name = calendar.day_name[calendar.weekday(year, month, day)]
+    print(f"The day on {year}-{month}-{day} is a {day_name}.\n")
+    
+    # 해당 연도의 달력 전체 출력
+    print(f"Calendar for the year {year}:\n")
+    print(calendar.calendar(year))
+    
+    # 그 달의 첫번째 날과 마지막 날 구하기
+    _, last_day = calendar.monthrange(year, month)
+    print(f"The first day of {year}-{month} is {year}-{month}-1.")
+    print(f"The last day of {year}-{month} is {year}-{month}-{last_day}.\n")
+    
+    # 윤년 여부 확인
+    is_leap = calendar.isleap(year)
+    print(f"Is the year {year} a leap year? {'Yes' if is_leap else 'No'}.")
+
+# 사용 예제
+if __name__ == "__main__":
+    year = 2024
+    month = 6
+    day = 8
+    print_calendar_info(year, month, day)
