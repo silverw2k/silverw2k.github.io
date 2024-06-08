@@ -1,0 +1,29 @@
+public class Pair<T, U> {
+    private T first;
+    private U second;
+
+    // 생성자
+    public Pair(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    // 첫 번째 필드 값을 반환하는 메서드
+    public T first() {
+        return first;
+    }
+
+    // 두 번째 필드 값을 반환하는 메서드
+    public U second() {
+        return second;
+    }
+
+    public static void main(String[] args) {
+        // Pair 객체 생성
+        Pair<Integer, String> pair = new Pair<>(10, "Hello");
+
+        // first()와 second() 메서드로 값을 출력
+        System.out.println("첫 번째 필드 값: " + pair.first());
+        System.out.println("두 번째 필드 값: " + pair.second());
+    }
+}
