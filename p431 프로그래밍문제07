@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.function.Function;
+
+// Person 클래스
+class Person {
+    private String name;
+    private int height;
+    private int weight;
+
+    // 생성자
+    public Person(String name, int height, int weight) {
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+    }
+
+    // Getter 메서드
+    public String getName() {
+        return name;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+}
+
+// PersonTest 클래스
+public class PersonTest {
+    public static void main(String[] args) {
+        // 5명의 Person 객체 생성
+        ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person("황진이", 160, 45));
+        persons.add(new Person("이순신", 180, 80));
+        persons.add(new Person("김삿갓", 175, 65));
+        persons.add(new Person("홍길동", 170, 68));
+        persons.add(new Person("배장화", 155, 48));
+
+        // 평균 신장 구하기
+        double avgHeight = average(persons, Person::getHeight);
+        System.out.println("평균 신장: " + avgHeight);
+
+        // 평균 체중 구하기
+        double avgWeight = average(persons, Person::getWeight);
+        System.out.println("평균 체중: " + avgWeight);
+    }
+
+    // 평균을 반환하는 정적 메서드
+    public static double average(ArrayList<Person> persons, Function<Person, Integer> function) {
+        int sum = 0;
+        for (Person person : persons) {
+            sum += function.apply(person);
+        }
+        return (double) sum / persons.size();
+    }
+}
