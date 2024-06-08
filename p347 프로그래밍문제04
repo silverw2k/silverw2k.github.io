@@ -1,0 +1,24 @@
+import random
+
+class Dice:
+    def __init__(self):
+        self.value = 1  # 초기 주사위 값
+
+    def roll(self):
+        self.value = random.randint(1, 6)  # 1부터 6까지의 랜덤 값 생성
+        return self.value
+
+    def __repr__(self):
+        return f'Dice(value={self.value})'
+
+# 주사위 클래스 검증 프로그램
+if __name__ == "__main__":
+    dice = Dice()
+    result = dice.roll()  # 주사위 굴리기
+    print(f"주사위 결과: {result}")  # 주사위 결과 출력
+
+    # 주사위 값이 4인지 확인
+    if result == 4:
+        print("결과는 4입니다.")
+    else:
+        print(f"결과는 {result}입니다. 다시 굴려보세요.")
