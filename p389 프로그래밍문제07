@@ -1,0 +1,23 @@
+public class Box<T> {
+    private T content;
+
+    // 상자에 내용물을 넣는 메서드
+    public void put(T item) {
+        this.content = item;
+    }
+
+    // 상자에서 내용물을 꺼내는 메서드
+    public T get() {
+        return this.content;
+    }
+
+    public static void main(String[] args) {
+        Box<Integer> integerBox = new Box<>();
+        integerBox.put(100);
+
+        Box<String> stringBox = new Box<>();
+        stringBox.put("만능이네!");
+
+        System.out.println("결과는 " + integerBox.get() + " , " + stringBox.get());
+    }
+}
