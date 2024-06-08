@@ -1,0 +1,23 @@
+from datetime import datetime
+
+def print_date_info():
+    # 현재 날짜 및 시간 가져오기
+    now = datetime.now()
+    
+    # 첫 번째 형식: 2017.06.15 오후 15:35:40
+    formatted_date_time = now.strftime('%Y.%m.%d %p %I:%M:%S')
+    formatted_date_time = formatted_date_time.replace('AM', '오전').replace('PM', '오후')
+    print(formatted_date_time)
+    
+    # 두 번째 형식: 오늘은 6월의 15번째 날
+    day_of_month = now.day
+    month = now.strftime('%m')
+    print(f"오늘은 {month}월의 {day_of_month}번째 날")
+    
+    # 세 번째 형식: 오늘은 2017년의 166번째 날
+    day_of_year = now.timetuple().tm_yday
+    year = now.year
+    print(f"오늘은 {year}년의 {day_of_year}번째 날")
+
+# 실행
+print_date_info()
