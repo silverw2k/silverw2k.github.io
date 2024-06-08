@@ -1,0 +1,18 @@
+public class StringExample {
+    public static void main(String[] args) {
+        // String, StringBuilder, StringBuffer 객체 생성
+        String str = "멘붕";
+        StringBuilder sb = new StringBuilder("meltdown");
+        StringBuffer sf = new StringBuffer("!@#");
+
+        // show() 메서드 호출
+        show(str);
+        show(sb);
+        show(sf);
+    }
+
+    // show() 메서드 정의
+    public static void show(Object obj) {
+        System.out.println(obj.toString());
+    }
+}
