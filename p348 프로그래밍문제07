@@ -1,0 +1,18 @@
+class Person:
+    def __init__(self, name, number, nationality):
+        self.name = name
+        self.number = number
+        self.nationality = nationality
+
+    def show_info(self):
+        print(f"이름 : {self.name} 번호 : {self.number} 국적 : {self.nationality}")
+
+# 객체 생성
+person1 = Person("세종대왕", 1, "조선")
+person2 = Person("오바마", 2, "미국")
+person3 = Person("징기스칸", 3, "몽고")
+
+# 정보 출력
+person1.show_info()
+person2.show_info()
+person3.show_info()
