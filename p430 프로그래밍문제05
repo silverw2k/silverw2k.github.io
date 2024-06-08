@@ -1,0 +1,28 @@
+import java.util.function.UnaryOperator;
+
+public class FirstString {
+    // startsWith() 메서드를 포함하는 FirstString 클래스
+    
+    public static void main(String[] args) {
+        // UnaryOperator를 이용하여 문자열의 첫 문자를 대문자로 변환하는 함수 정의
+        UnaryOperator<String> firstCharToUpperCase = FirstString::toUpperCase;
+
+        // 테스트 문자열
+        String s1 = "hello";
+        String s2 = "world";
+
+        // 변환 결과 출력
+        System.out.println("첫 문자 대문자 변환 결과:");
+        System.out.println(s1 + " -> " + firstCharToUpperCase.apply(s1));
+        System.out.println(s2 + " -> " + firstCharToUpperCase.apply(s2));
+    }
+
+    // startsWith() 메서드를 이용하여 문자열의 첫 문자를 대문자로 변환하는 정적 메서드
+    public static String toUpperCase(String s) {
+        if (s == null || s.isEmpty()) {
+            return s;
+        }
+        char firstChar = Character.toUpperCase(s.charAt(0));
+        return firstChar + s.substring(1);
+    }
+}
