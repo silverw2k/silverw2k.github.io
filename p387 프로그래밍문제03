@@ -1,0 +1,19 @@
+import java.util.StringTokenizer;
+
+public class TokenExample {
+    public static void main(String[] args) {
+        String text = "of the people, by the people, for the people";
+
+        // 문자열의 토큰 출력
+        showTokens(text);
+    }
+
+    // 문자열을 토큰으로 분리하여 출력하는 메서드
+    public static void showTokens(String text) {
+        StringTokenizer tokenizer = new StringTokenizer(text, " ,");
+        while (tokenizer.hasMoreTokens()) {
+            System.out.print(tokenizer.nextToken() + " , ");
+        }
+        System.out.println("끝");
+    }
+}
