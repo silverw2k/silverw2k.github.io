@@ -1,0 +1,35 @@
+class Student:
+    def __init__(self, student_id, name):
+        self.student_id = student_id
+        self.name = name
+
+    def __eq__(self, other):
+        if isinstance(other, Student):
+            return self.student_id == other.student_id
+        return False
+
+    def __hash__(self):
+        return hash(self.student_id)
+
+    def __repr__(self):
+        return f'Student(student_id={self.student_id}, name={self.name})'
+
+
+# 검증 프로그램
+if __name__ == "__main__":
+    s1 = Student(1, "Alice")
+    s2 = Student(1, "Bob")
+    s3 = Student(2, "Charlie")
+
+    # 동등성 비교
+    print(s1 == s2)  # True
+    print(s1 == s3)  # False
+
+    # 집합에 넣기
+    student_set = {s1, s2, s3}
+    print(student_set)  # Student(student_id=1, name=Alice)와 Student(student_id=2, name=Charlie)만 있어야 함
+
+    # 딕셔너리의 키로 사용
+    student_dict = {s1: "First", s3: "Second"}
+    print(student_dict[s2])  # "First" 출력, s1과 s2는 같은 키로 취급됨
+    print(student_dict)  # {Student(student_id=1, name=Alice): 'First', Student(student_id=2, name=Charlie): 'Second'}
