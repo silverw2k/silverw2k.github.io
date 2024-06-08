@@ -1,0 +1,40 @@
+// 동물 인터페이스
+interface Animal {
+    void makeSound();
+}
+
+// 강아지 클래스
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("멍멍");
+    }
+}
+
+// 뻐꾸기 클래스
+class Cuckoo implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("뻐꾸뻐꾸");
+    }
+}
+
+// 테스트 프로그램
+public class AnimalTest {
+    // 제네릭 메서드: 모든 동물의 소리를 출력
+    public static <T extends Animal> void printSound(T animal) {
+        animal.makeSound();
+    }
+
+    public static void main(String[] args) {
+        // Dog 객체 생성 및 소리 출력
+        Dog dog = new Dog();
+        System.out.print("Dog 소리: ");
+        printSound(dog);
+
+        // Cuckoo 객체 생성 및 소리 출력
+        Cuckoo cuckoo = new Cuckoo();
+        System.out.print("Cuckoo 소리: ");
+        printSound(cuckoo);
+    }
+}
