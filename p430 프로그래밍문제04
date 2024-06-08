@@ -1,0 +1,30 @@
+ㅍimport java.util.function.ToIntFunction;
+
+public class LengthCalculatorUsingToIntFunction {
+    public static void main(String[] args) {
+        // ToIntFunction를 사용하여 정수의 길이를 반환하는 함수 정의
+        ToIntFunction<Integer> lengthCalculator = num -> String.valueOf(num).length();
+
+        // 테스트
+        int number1 = 12345;
+        int number2 = 987654321;
+        
+        System.out.println("정수 " + number1 + "의 길이: " + lengthCalculator.applyAsInt(number1));
+        System.out.println("정수 " + number2 + "의 길이: " + lengthCalculator.applyAsInt(number2));
+    }
+}
+import java.util.function.UnaryOperator;
+
+public class LengthCalculatorUsingUnaryOperator {
+    public static void main(String[] args) {
+        // UnaryOperator를 사용하여 정수의 길이를 반환하는 함수 정의
+        UnaryOperator<Integer> lengthCalculator = num -> String.valueOf(num).length();
+
+        // 테스트
+        int number1 = 12345;
+        int number2 = 987654321;
+        
+        System.out.println("정수 " + number1 + "의 길이: " + lengthCalculator.apply(number1));
+        System.out.println("정수 " + number2 + "의 길이: " + lengthCalculator.apply(number2));
+    }
+}
