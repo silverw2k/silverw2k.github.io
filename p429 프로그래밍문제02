@@ -1,0 +1,21 @@
+public class WordableTestLambda {
+    public static void main(String[] args) {
+        // Wordable 타입의 배열 원소를 람다식으로 구성
+        Wordable[] words = {
+            () -> "가위",
+            () -> "나비",
+            () -> "다리",
+            () -> "마차"
+        };
+
+        // 배열 원소 출력
+        for (Wordable word : words) {
+            System.out.println(word.getWord());
+        }
+    }
+}
+
+// Wordable 인터페이스 정의
+interface Wordable {
+    String getWord();
+}
