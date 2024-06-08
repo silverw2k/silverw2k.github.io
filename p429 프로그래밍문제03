@@ -1,0 +1,22 @@
+import java.util.function.Consumer;
+
+public class NumberConsumerTest {
+    public static void main(String[] args) {
+        // Consumer를 이용하여 숫자와 'apple' 또는 'apples'를 출력
+        NumberConsumer printApple = (num) -> {
+            if (num == 1) {
+                System.out.println(num + " apple");
+            } else {
+                System.out.println(num + " apples");
+            }
+        };
+
+        // 테스트
+        printApple.accept(3); // 3 apples
+        printApple.accept(1); // 1 apple
+    }
+}
+
+// 숫자와 'apple' 또는 'apples'를 출력하는 함수형 인터페이스
+@FunctionalInterface
+interface NumberConsumer extends Consumer<Integer> {}
