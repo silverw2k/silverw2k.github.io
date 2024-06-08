@@ -1,0 +1,62 @@
+public class MyDate {
+    private int year;
+    private int month;
+    private int day;
+
+    // 생성자
+    public MyDate(int year, int month, int day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
+    // 오늘 날짜 정보를 반환하는 메서드
+    public static MyDate today() {
+        LocalDate currentDate = LocalDate.now();
+        return new MyDate(currentDate.getYear(), currentDate.getMonthValue(), currentDate.getDayOfMonth());
+    }
+
+    // 날짜 정보를 형식에 맞게 출력하는 메서드
+    public String formattedDate() {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd a HH:mm:ss");
+        return now.format(formatter);
+    }
+
+    // 해당 월의 n번째 날을 반환하는 메서드
+    public String dayOfMonth() {
+        return "오늘은 " + month + "월의 " + day + "번째 날";
+    }
+
+    // 해당 연도의 n번째 날을 반환하는 메서드
+    public String dayOfYear() {
+        LocalDate date = LocalDate.of(year, month, day);
+        int dayOfYear = date.getDayOfYear();
+        return "오늘은 " + year + "년의 " + dayOfYear + "번째 날";
+    }
+
+    // 예외를 발생시킬 수 있는 메서드
+    public static void casting() throws NumberFormatException {
+        String invalidNumber = "invalid";
+        int number = Integer.parseInt(invalidNumber); // NumberFormatException 발생
+    }
+}
+public class TestMyDate {
+    public static void main(String[] args) {
+        try {
+            // 오늘 날짜를 가져오는 MyDate 객체 생성
+            MyDate today = MyDate.today();
+
+            // 날짜를 다양한 형식으로 출력
+            System.out.println(today.formattedDate());
+            System.out.println(today.dayOfMonth());
+            System.out.println(today.dayOfYear());
+
+            // casting 메서드 호출
+            MyDate.casting();
+        } catch (NumberFormatException e) {
+            System.err.println("예외가 발생했습니다: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}
